@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="block">
+        <p class="paragraph">Welcome to my website</p>
+    </nav>
+    <div class="block">
+        <h4>Hey, there, My Name is <span id="username">Nikhil Mishra</span></h4>
+        <p class="paragraph">Hey there code is here </p>
+        <pre><code>console.log('hey there ')</code></pre>
+    </div>
+    <script>
+        // Query Selector - First Element
+        /*
+        - tag name
+        - id #
+        - class .
+        */
+
+        //   const body =  document.querySelector('body')
+        //   body.innerHTML = "<h1>Hacked</h1>"
+
+        // const div = document.querySelector("div")
+        // div.innerHTML = "<h1>Hacked</h1>"
+
+        //  ID SELECT
+        // const username = document.querySelector('#username')
+        // username.innerText = "Nikhil"
+
+        //    CLASS SELECT
+
+        // const ele = document.querySelector(".block")
+        // console.log(ele.innerHTML);
+
+        const ele = document.querySelectorAll(".block")
+        ele.forEach((e) => {
+            console.log(e.innerHTML);
+        })
+
+
+
+    </script>
+</body>
+
+</html>

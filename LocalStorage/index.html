@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage</title>
+</head>
+<body>
+    <div class="Home">
+        <h4>Welcome guys</h4>
+    </div>
+    <div class="block">
+        <h4 id="name-block">
+            Hey There, My Name is 
+            <span id="username">Nikhil Mishra</span>
+        </h4>
+        <p class="block remove">Here is a surprise for you</p>
+        <pre><code>console.log("Hey There")</code></pre>
+    </div>
+    
+    <input id="input-name" type="text" value="" placeholder="Enter a text">
+    <button id="Clickbutton">Click Me</button> 
+
+    <script>
+        const button = document.getElementById('Clickbutton');
+        const uname = document.getElementById('input-name');
+        const username = document.getElementById('username');
+
+        button.addEventListener('click', () => {
+            const value = uname.value.trim();
+            if (value) {
+                localStorage.setItem("name", value);
+                username.innerText = value; // No reload needed
+                uname.value = ""; // Optional: clear input
+            } else {
+                alert("Please enter a name before clicking.");
+            }
+        });
+
+        window.addEventListener('load', () => {
+            const value = localStorage.getItem('name');
+            if (value) {
+                username.innerText = value;
+            }
+        });
+    </script>
+</body>
+</html>

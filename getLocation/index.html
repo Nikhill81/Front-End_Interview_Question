@@ -1,0 +1,35 @@
+<!-- 
+    In this we can know how to get current location
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Location</title>
+ </head>
+ <body>
+    <h1>Getting Users Location</h1>
+    <button id="locaton-button">Get Location</button>
+
+    <script>
+        const button = document.getElementById('locaton-button')
+
+        function geolocation(position) {
+            console.log(position);
+
+        }
+
+        function failedtoGet() {
+            console.log("There was some issue");
+        }
+
+        button.addEventListener('click', async() => {
+            const result = navigator.geolocation.getCurrentPosition(() => {}, () => {})
+
+        })
+
+    </script>   
+ </body>
+ </html>
